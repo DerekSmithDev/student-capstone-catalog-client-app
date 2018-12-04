@@ -3,6 +3,7 @@
     <h1>{{ message }}</h1>
     <p>This is the fancy feature location.</p>
     <p>here is another feature</p>
+    <p>And, here is another feature.</p>
   </div>
 </template>
 
