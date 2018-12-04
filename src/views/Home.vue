@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <p>This is the fancy feature location.</p>
   </div>
 </template>
 
-<style>
-</style>
+<style></style>
 
 <script>
 export default {
