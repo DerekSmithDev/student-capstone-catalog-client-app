@@ -23,10 +23,10 @@
       </datalist>
       <div class="row" is="transition-group" name="slide-right">
         <div
-          v-for="capstone in orderBy(filterBy(capstones, searchFilter, 'name', 'last_name'), sortAttribute, sortOrder)"
-          class="col-md-4 mb-2"
-          v-bind:key="capstone.id"
-        >
+            v-for="capstone in orderBy(filterBy(capstones, searchFilter, 'name', 'last_name'), sortAttribute, sortOrder)"
+            class="col-md-4 mb-2"
+            v-bind:key="capstone.id"
+          >
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">{{ capstone.name }}</h5>
@@ -35,10 +35,11 @@
               <p class="card-text">Website: {{ capstone.website_url }}</p>
               <a v-bind:href="`/#/capstones/${capstone.id}`" class="btn btn-primary">Go somewhere</a>
             </div>
+            </div>
           </div>
         </div>
       </div>
-      <!---->
+      
     </div>
   </div>
 </template>
