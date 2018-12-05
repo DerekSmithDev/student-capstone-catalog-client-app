@@ -1,5 +1,5 @@
 <template>
-  <div class="Home">
+  <div class="Show">
     <div class="container">
       <h1>Capstone Name</h1>
       <div class="images">
@@ -12,7 +12,11 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.show {
+  text-align: center;
+}
+</style>
 
 <script>
 var axios = require("axios");

@@ -43,6 +43,9 @@
 </template>
 
 <style>
+.home {
+  text-align: center;
+}
 /* Vue.js fade */
 .fade-enter-active,
 .fade-leave-active {
