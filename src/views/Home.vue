@@ -10,33 +10,30 @@
       </div>
       <h3>Search Capstones</h3>
       <input type="text" v-model="searchFilter" list="names" />
+      <datalist id="names">
+        <option v-for="capstone in capstones">{{ capstone.id }}</option>
+      </datalist>
       <br>
       <h3>Sort Capstones</h3>
       <div>
         <button v-on:click="setSortAttribute('name');" class="btn btn-secondary">Sort by Capstone Name</button>
         <button v-on:click="setSortAttribute('last_name');" class="btn btn-secondary">Sort by Student Last Name</button>
       </div>
-      <datalist id="names">
-        <option v-for="capstone in capstones">Capstone Name</option>
-      </datalist>
-<!--       <div class="row" is="transition-group" name="slide-right"> -->
-      <!--    <div
-            v-for="capstone in orderBy(filterBy(capstones, searchFilter, 'name', 'last_name'), sortAttribute, sortOrder)"
-            class="col-md-4 mb-2"
-            v-bind:key="capstone.id"
-          > -->
-  <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Capstone Name</h5>
-                <p class="card-text">Student: First Name, Last Name</p>
-                <p class="card-text">Description: Description</p>
-                <p class="card-text">Website: URL</p>
+      <div class="row" is="transition-group" name="slide-right">
+         <div v-for="capstone in capstones" class="col-md-4 mb-2" v-bind:key="capstone.id">
+            <div class="card">
+            <img class="card-img-top" v-bind:src="capstone.screenshot" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ capstone.name }}</h5>
+                <p class="card-text">Student: </p>
+                <p class="card-text">Description: {{ capstone.description }}</p>
+                <p class="card-text">Website: {{ capstone.url }}</p>
                 <a v-bind:href="`/#/capstones/1`" class="btn btn-primary">Explore capstone</a>
               </div>
               </div>
             </div>
-          </div>
-        </div>
+         </div>
+      </div>
 
       </div>
     </div>
@@ -94,7 +91,7 @@ export default {
     return {
       message: "Welcome to Vue.js!",
       capstones: [],
-      student: [],
+      students: [],
       searchFilter: "",
       sortAttribute: "name",
       sortOrder: 1,
@@ -102,7 +99,7 @@ export default {
     };
   },
   created: function() {
-    axios.get("https://gentle-sierra-69054.herokuapp.com/api/students").then(
+    axios.get("http://localhost:3000/api/capstones").then(
       function(response) {
         console.log(response.data);
         this.capstones = response.data;
