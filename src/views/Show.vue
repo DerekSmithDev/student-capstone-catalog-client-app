@@ -5,7 +5,7 @@
       <div class="images">
         <img src="http://thecommons.dpsk12.org/cms/lib/CO01900837/Centricity/Domain/139/Capstone-Logo.png" alt="" />
       </div>
-      <h2>URL</h2>
+      <h4>URL</h4>
       <p>Description</p>
       <a href="/#/capstones">Back to all capstones</a>
     </div>

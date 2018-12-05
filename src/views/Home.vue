@@ -2,22 +2,20 @@
   <div class="home">
     <div class="container">
       <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
+        <h1 class="display-4">Student Capstone Catalog</h1>
         <p class="lead">
-          This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content
-          or information.
+          Below is a list of capstone projects by our students. 
         </p>
         <hr class="my-4" />
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
       </div>
-      <!---->
+      <h3>Search Capstones</h3>
+      <input type="text" v-model="searchFilter" list="names" />
+      <br> 
+      <h3>Sort Capstones</h3>
       <div>
         <button v-on:click="setSortAttribute('name');" class="btn btn-secondary">Sort by Capstone Name</button>
         <button v-on:click="setSortAttribute('last_name');" class="btn btn-secondary">Sort by Student Last Name</button>
       </div>
-      <h1>Search Capstones</h1>
-      <input type="text" v-model="searchFilter" list="names" />
       <datalist id="names">
         <option v-for="capstone in capstones">Capstone Name</option>
       </datalist>
