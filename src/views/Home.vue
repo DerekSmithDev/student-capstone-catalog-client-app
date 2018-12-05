@@ -28,7 +28,7 @@
                 <p class="card-text">Student: </p>
                 <p class="card-text">Description: {{ capstone.description }}</p>
                 <p class="card-text">Website: {{ capstone.url }}</p>
-                <a v-bind:href="`/#/capstones/1`" class="btn btn-primary">Explore capstone</a>
+                <a v-bind:href="`/#/capstones/${capstone.id}`" class="btn btn-primary">Explore capstone</a>
               </div>
               </div>
             </div>

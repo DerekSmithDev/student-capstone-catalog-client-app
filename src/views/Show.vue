@@ -1,12 +1,10 @@
 <template>
   <div class="Show">
     <div class="container">
-      <h1>Capstone Name</h1>
-      <div class="images">
-        <img src="http://thecommons.dpsk12.org/cms/lib/CO01900837/Centricity/Domain/139/Capstone-Logo.png" alt="" />
-      </div>
-      <h4>URL</h4>
-      <p>Description</p>
+      <h1>{{ capstone.name }}</h1>
+      <div class="images"><img v-bind:src="capstone.screenshot" alt="" /></div>
+      <h4>{{ capstone.url }}</h4>
+      <p>{{ capstone.description }}</p>
       <a href="/#/capstones">Back to all capstones</a>
     </div>
   </div>
@@ -27,7 +25,7 @@ export default {
     };
   },
   created: function() {
-    axios.get("http://localhost:3000/api/students/capstones/" + this.$route.params.id).then(
+    axios.get("http://localhost:3000/api/capstones/" + this.$route.params.id).then(
       function(response) {
         this.capstone = response.data;
       }.bind(this)
