@@ -13,27 +13,27 @@
       </div>
       <!---->
       <div>
-        <button v-on:click="setSortAttribute('name');" class="btn btn-secondary">Sort by Capston Name</button>
+        <button v-on:click="setSortAttribute('name');" class="btn btn-secondary">Sort by Capstone Name</button>
         <button v-on:click="setSortAttribute('last_name');" class="btn btn-secondary">Sort by Student Last Name</button>
       </div>
       <h1>Search Capstones</h1>
       <input type="text" v-model="searchFilter" list="names" />
       <datalist id="names">
-        <option v-for="capstone in capstones">{{ capstone.name }}</option>
+        <option v-for="capstone in capstones">Capstone Name</option>
       </datalist>
       <div class="row" is="transition-group" name="slide-right">
-        <div
+     <!--    <div
             v-for="capstone in orderBy(filterBy(capstones, searchFilter, 'name', 'last_name'), sortAttribute, sortOrder)"
             class="col-md-4 mb-2"
             v-bind:key="capstone.id"
-          >
+          > -->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">{{ capstone.name }}</h5>
-              <p class="card-text">Student: {{ student_id.first_name }} {{ student_id.last_name }}</p>
-              <p class="card-text">Description: {{ capstone.description }}</p>
-              <p class="card-text">Website: {{ capstone.website_url }}</p>
-              <a v-bind:href="`/#/capstones/${capstone.id}`" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">Capstone Name</h5>
+              <p class="card-text">Student: First Name, Last Name</p>
+              <p class="card-text">Description: Description</p>
+              <p class="card-text">Website: URL</p>
+              <a v-bind:href="`/#/capstones/1`" class="btn btn-primary">Go somewhere</a>
             </div>
             </div>
           </div>
