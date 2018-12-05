@@ -1,16 +1,22 @@
 <template>
-  <div class="Home">
+  <div class="Show">
     <div class="container">
-      <h1>{{ capstone.name }}</h1>
-      <div class="images"><img v-bind:src="capstone.images[0]" alt="" /></div>
-      <h2>{{ capstone.url }}</h2>
-      <p>{{ capstone.description }}</p>
-      <a href="/#/">Back to all capstone</a>
+      <h1>Capstone Name</h1>
+      <div class="images">
+        <img src="http://thecommons.dpsk12.org/cms/lib/CO01900837/Centricity/Domain/139/Capstone-Logo.png" alt="" />
+      </div>
+      <h4>URL</h4>
+      <p>Description</p>
+      <a href="/#/capstones">Back to all capstones</a>
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.show {
+  text-align: center;
+}
+</style>
 
 <script>
 var axios = require("axios");
